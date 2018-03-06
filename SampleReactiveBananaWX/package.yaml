@@ -1,0 +1,104 @@
+name:                SampleReactiveBananaWX
+version:             0.1.0.0
+github:              "nabechan777/SampleReactiveBananaWX"
+license:             BSD3
+author:              "DaikiWatanabe"
+maintainer:          "daiki7watanabe@gmail.com"
+copyright:           "2018 DaikiWatanabe"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/nabechan777/SampleReactiveBananaWX#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+custom-setup:
+    dependencies:
+    - base >= 4.7 && < 5
+    - Cabal >= 1.23
+    - cabal-macosx >= 0.1 && < 0.3
+
+library:
+  source-dirs: src
+  dependencies:
+  - process
+  - containers
+  - random
+  - executable-path
+  - filepath
+  - reactive-banana
+  - reactive-banana-wx
+  - wx
+  - wxcore
+
+executables:
+  Animation:
+    main:                Main.hs
+    source-dirs:         Animation
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - SampleReactiveBananaWX
+
+  Asteroids:
+      main:             Main.hs
+      source-dirs:      Asteroids
+      ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      dependencies:
+      - SampleReactiveBananaWX
+
+  BarTab:
+      main:             Main.hs
+      source-dirs:      BarTab
+      ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      dependencies:
+      - SampleReactiveBananaWX
+
+  Wave:
+      main:             Main.hs
+      source-dirs:      Wave
+      ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      dependencies:
+      - SampleReactiveBananaWX
+
+  CurrencyConverter:
+      main:             Main.hs
+      source-dirs:      CurrencyConverter
+      ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      dependencies:
+      - SampleReactiveBananaWX
+
+tests:
+  SampleReactiveBananaWX-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - SampleReactiveBananaWX

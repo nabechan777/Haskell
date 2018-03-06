@@ -1,0 +1,58 @@
+name:                practice
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/nabechan777/playground/Haskell/introduction/practice#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Daiki Watanabe
+maintainer:          example@example.com
+copyright:           2017 Daiki Watanabe
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Practice00
+                     , Practice01
+                     , Practice02
+                     , Practice03
+                     , Practice04
+                     , Practice05
+                     , Practice06
+                     , Practice07
+                     , Practice08
+                     , Practice09
+                     , Practice10
+                     , Practice11
+                     , Practice12
+                     , Practice13
+                     , Practice14
+  build-depends:       base >= 4.7 && < 5
+                     , random
+                     , array
+                     , mtl
+  default-language:    Haskell2010
+
+executable practice-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , practice
+  default-language:    Haskell2010
+
+test-suite practice-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , practice
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/practice

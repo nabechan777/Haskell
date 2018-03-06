@@ -1,0 +1,49 @@
+name:                Temp
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/nabechan777/Temp#readme
+license:             BSD3
+license-file:        LICENSE
+author:              DaikiWatanabe
+maintainer:          daiki7watanabe@gmail.com
+copyright:           2017 DaikiWatanabe
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Impl
+  build-depends:       base >= 4.7 && < 5
+                     , reactive-banana
+                     , reactive-banana-wx
+                     , wx
+  default-language:    Haskell2010
+
+custom-setup
+  setup-depends:       base >= 4.2 && < 5
+                     , Cabal >= 1.24
+                     , cabal-macosx >= 0.1 && < 0.3
+
+executable Temp-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , Temp
+  default-language:    Haskell2010
+
+test-suite Temp-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , Temp
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/nabechan777/Temp

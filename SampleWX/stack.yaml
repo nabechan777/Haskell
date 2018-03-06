@@ -1,0 +1,15 @@
+flags: {}
+packages:
+- .
+extra-deps:
+- cabal-macosx-0.2.4.1
+- reactive-banana-wx-1.1.1.0
+- wx-0.92.3.0
+- wxc-0.92.3.0
+- wxcore-0.92.3.0
+- wxdirect-0.92.3.0
+
+explicit-setup-deps:
+    "reactive-banana-wx": true
+
+resolver: lts-9.18

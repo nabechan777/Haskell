@@ -1,0 +1,53 @@
+name:                SampleHRR
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/nabechan777/SampleHRR#readme
+license:             BSD3
+license-file:        LICENSE
+author:              DaikiWatanabe
+maintainer:          daiki7watanabe@gmail.com
+copyright:           2017 DaikiWatanabe
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     HelloWorld
+                     , Examples
+                     , Database.Record.TH.SQLite3
+                     , Database.Relational.Query.SQLite3
+                     , Account
+  build-depends:       base >= 4.7 && < 5
+                     , template-haskell
+                     , relational-query
+                     , relational-query-HDBC
+                     , relational-schemas
+                     , HDBC
+                     , HDBC-session
+                     , HDBC-sqlite3
+                     , persistable-record
+  default-language:    Haskell2010
+
+executable SampleHRR-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , SampleHRR
+  default-language:    Haskell2010
+
+test-suite SampleHRR-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , SampleHRR
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/nabechan777/SampleHRR
