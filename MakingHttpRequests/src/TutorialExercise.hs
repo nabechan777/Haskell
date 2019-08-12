@@ -1,11 +1,18 @@
 #!/usr/bin/env stack
--- stack script --resolver lts-12.21
+-- stack script --resolver lts-9.21
 {-# LANGUAGE OverloadedStrings #-}
+module TutorialExercise
+    ( basicUsage
+    ) where
+
 import qualified Data.ByteString.Lazy.Char8 as L8
 import           Network.HTTP.Simple
 
 main :: IO ()
-main = do
+main = basicUsage
+
+basicUsage :: IO ()
+basicUsage = do
     response <- httpLBS "http://httpbin.org/get"
 
     putStrLn $ "The status code was: " ++
