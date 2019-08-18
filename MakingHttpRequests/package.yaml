@@ -24,6 +24,8 @@ dependencies:
 - http-conduit
 - text
 - bytestring
+- aeson
+- yaml
 
 library:
   source-dirs: src
